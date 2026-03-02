@@ -1,0 +1,19 @@
+3. Konfigurasi Lingkungan (Environment)
+Laravel tidak menyertakan file .env (yang berisi password database) demi keamanan.
+
+Cari file bernama .env.example.
+
+Rename atau copy file tersebut menjadi .env.
+
+Buka file .env tersebut dan sesuaikan konfigurasi database (DB_DATABASE, DB_USERNAME, DB_PASSWORD) dengan database di device baru Anda.
+
+Install PHP Library	composer install	Mengunduh ulang folder vendor.
+
+Generate Key	php artisan key:generate	Membuat app key baru agar aplikasi bisa berjalan.
+
+Pastikan database sudah dibuat di phpMyAdmin (atau tools database lainnya) sesuai dengan nama yang Anda tulis di file .env. Kemudian jalankan:
+php artisan migrate
+
+Error 500: Biasanya karena lupa menjalankan php artisan key:generate atau salah konfigurasi .env.
+
+Folder Permissions: Jika menggunakan Linux/Mac, pastikan folder storage dan bootstrap/cache memiliki izin akses tulis (chmod -R 775).
